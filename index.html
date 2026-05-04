@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Kelulusan SMA Ya BAKII Kesugihan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        /* Global Reset */
+        body, html { height: 100%; margin: 0; }
+
+        /* Background Halaman 1 */
+        #page-1 {
+            /* linear-gradient berfungsi sebagai overlay agar teks putih terbaca jelas */
+            background: linear-gradient(rgba(7, 24, 138, 0.7), #27099280), 
+                        url('WhatsApp\ Image\ 2025-11-03\ at\ 11.40.28.jpeg'); 
+            background-size: cover;
+            background-position: center;
+            transition: all 0.5s ease;
+        }
+
+        /* Background Halaman 2 */
+        #page-2 {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                        url('ARW07936.jpg'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col">
+
+    <section id="page-1" class="flex-grow flex items-center justify-center p-4">
+        <div class="glass-card p-8 max-w-2xl w-full text-center shadow-2xl animate__animated animate__fadeIn">
+            <img src="LOGO YA BAKII Warna.png" alt="Logo" class="mx-auto mb-6 w-24 h-24 object-contain">
+            <h1 class="text-2xl font-bold text-blue-900 mb-1">PENGUMUMAN KELULUSAN</h1>
+            <h2 class="text-lg font-bold text-gray-700">SMA YA BAKII KESUGIHAN</h2>
+            <p class="text-gray-600 mb-8 uppercase tracking-widest text-sm">Tahun Ajaran 2025/2026</p>
+            
+            <div class="grid grid-cols-4 gap-2 mb-8">
+                <div class="bg-blue-900 text-white p-3 rounded-xl shadow-lg">
+                    <span id="days" class="block text-2xl md:text-4xl font-bold">00</span><small>Hari</small>
+                </div>
+                <div class="bg-blue-800 text-white p-3 rounded-xl shadow-lg">
+                    <span id="hours" class="block text-2xl md:text-4xl font-bold">00</span><small>Jam</small>
+                </div>
+                <div class="bg-blue-700 text-white p-3 rounded-xl shadow-lg">
+                    <span id="minutes" class="block text-2xl md:text-4xl font-bold">00</span><small>Menit</small>
+                </div>
+                <div class="bg-blue-600 text-white p-3 rounded-xl shadow-lg">
+                    <span id="seconds" class="block text-2xl md:text-4xl font-bold">00</span><small>Detik</small>
+                </div>
+            </div>
+            <p class="text-blue-900 font-semibold italic animate__pulse bg-white/50 py-2 rounded-full">Menunggu waktu pengumuman...</p>
+        </div>
+    </section>
+
+    <section id="page-2" class="flex-grow flex items-center justify-center p-4 hidden">
+        <div class="glass-card p-8 max-w-md w-full shadow-2xl border-t-8 border-blue-900 animate__animated animate__fadeIn">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold text-blue-900">Portal Kelulusan</h2>
+                <p class="text-gray-500 text-sm">Masukkan data resmi Anda</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">NISN Siswa</label>
+                    <input type="number" id="nisn-input" placeholder="Masukkan NISN..." class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none shadow-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Tanggal Lahir</label>
+                    <input type="date" id="tgl-lahir-input" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none shadow-sm">
+                </div>
+                
+                <button id="btn-cek" onclick="cekKelulusan()" disabled class="w-full bg-gray-400 text-white font-bold py-4 rounded-xl shadow-lg transition-all duration-300">
+                    <span id="btn-text">Memuat Data...</span>
+                </button>
+                <div id="result-area" class="hidden mt-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white/80 backdrop-blur-md py-4 border-t text-center text-xs text-gray-600 font-medium">
+        <p>&copy; 2026 SMA Ya BAKII Kesugihan Cilacap</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

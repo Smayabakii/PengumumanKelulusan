@@ -1,0 +1,87 @@
+/* Update Background Animasi */
+body {
+    margin: 0;
+    padding: 0;
+    /* Background default jika gambar gagal dimuat */
+    background-color: #f3f4f6; 
+}
+
+.bg-gradient-blue { 
+    background: linear-gradient(-45deg, #1e3a8a, #2563eb, #1d4ed8, #3b82f6);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek Partikel Halus di Belakang Card */
+.bg-gradient-blue::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); /* Pola geometris transparan */
+    opacity: 0.1;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Styling tambahan untuk Card agar lebih 'Pop Out' */
+.glass-card { 
+    background: rgba(255, 255, 255, 0.9); 
+    backdrop-filter: blur(15px); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Background untuk Halaman 2 agar tidak polos */
+#page-2 {
+    background-image: radial-gradient(circle at top right, #dbeafe, #f3f4f6 50%);
+}
+/* Update Background dengan Gambar */
+.bg-gradient-blue { 
+    position: relative;
+    /* Ganti 'background-image.jpg' dengan nama file gambar Anda */
+    background-image: url('WhatsApp\ Image\ 2025-11-03\ at\ 11.40.28.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+/* Overlay Gelap agar Teks Terbaca */
+.bg-gradient-blue::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(30, 58, 138, 0.8), rgba(37, 99, 235, 0.7));
+    z-index: 1;
+}
+
+/* Pastikan konten berada di atas overlay */
+.glass-card { 
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.92); 
+    backdrop-filter: blur(10px); 
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Background untuk Halaman 2 (Setelah hitung mundur selesai) */
+#page-2 {
+    background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                      url('ARW07936.jpg');
+    background-color: #000000;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
